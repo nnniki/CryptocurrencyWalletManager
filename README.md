@@ -23,8 +23,8 @@ This is a project made by me for Modern Java Technologies course in Faculty Of M
    and <amount_money> are invested money.
 
 6) sell <offering_code> - Sell cryptocurrency, where <offering_code> is the code of the crypto you want to sell.
-7) get-wallet-summary - Gives you information about your profile (such as available money and currently active investments).
-8) get-wallet-overall-summary - Provides the full information about the profit/loss of your investments.
+7) get_wallet_summary - Gives you information about your profile (such as available money and currently active investments).
+8) get_wallet_overall_summary - Provides the full information about the profit/loss of your investments.
 The application compares the price for each cryptocurrency from the time of purchase and its current price to get complete information.
 
 9) disconnect - Save current session and exit.
