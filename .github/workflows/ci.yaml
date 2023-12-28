@@ -20,7 +20,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           checkstyle_config: app/checkstyle.xml
-          reporter: github-pr-review
+          reporter: github-check
           level: error
           workdir: app/src/main
           
