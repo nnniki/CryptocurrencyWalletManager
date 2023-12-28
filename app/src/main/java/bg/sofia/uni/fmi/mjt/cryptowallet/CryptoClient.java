@@ -73,9 +73,9 @@ public class CryptoClient {
 
     public static void main(String[] args) {
         try (SocketChannel socketChannel = SocketChannel.open();
-             BufferedReader reader = new BufferedReader(Channels.newReader(socketChannel, CS_NAME));
-             PrintWriter writer = new PrintWriter(Channels.newWriter(socketChannel, CS_NAME), true);
-             Scanner scanner = new Scanner(System.in)) {
+            BufferedReader reader = new BufferedReader(Channels.newReader(socketChannel, CS_NAME));
+            PrintWriter writer = new PrintWriter(Channels.newWriter(socketChannel, CS_NAME), true);
+            Scanner scanner = new Scanner(System.in)) {
 
             socketChannel.connect(new InetSocketAddress(HOST_NAME, SERVER_PORT));
 
