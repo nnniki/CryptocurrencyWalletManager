@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bg.sofia.uni.fmi.mjt.cryptowallet.command.CommandCreatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-12-28T15:42:36" hostname="DESKTOP-6F11HT1" time="0.016">
+  <properties/>
+  <testcase name="testCreateCommandWithoutArguments()" classname="bg.sofia.uni.fmi.mjt.cryptowallet.command.CommandCreatorTest" time="0.011"/>
+  <testcase name="testCreateCommandInvalidCommand()" classname="bg.sofia.uni.fmi.mjt.cryptowallet.command.CommandCreatorTest" time="0.002"/>
+  <testcase name="testCreateCommandOneArgument()" classname="bg.sofia.uni.fmi.mjt.cryptowallet.command.CommandCreatorTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
