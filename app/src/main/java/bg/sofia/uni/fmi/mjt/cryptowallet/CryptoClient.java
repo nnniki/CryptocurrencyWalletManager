@@ -86,7 +86,7 @@ public class CryptoClient {
             while (true) {
                 System.out.print("Enter message: ");
                 String message = scanner.nextLine();
-                if (message.equals(HELP)) {
+                if(message.equals(HELP)) {
                     System.out.println(help());
                     continue;
                 }
