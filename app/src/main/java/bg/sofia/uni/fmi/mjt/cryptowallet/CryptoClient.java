@@ -40,7 +40,7 @@ public class CryptoClient {
         builder.append("get_wallet_summary - See your amount of money and currently active investments");
         builder.append(System.lineSeparator());
         builder.append("get_wallet_overall_summary - See all your Active and Finished investments" +
-                       " and your currently profit/loss");
+                    " and your currently profit/loss");
         builder.append(System.lineSeparator());
         builder.append("disconnect - Save your current activity and exit");
 
@@ -86,7 +86,7 @@ public class CryptoClient {
             while (true) {
                 System.out.print("Enter message: ");
                 String message = scanner.nextLine();
-                if(message.equals(HELP)) {
+                if (message.equals(HELP)) {
                     System.out.println(help());
                     continue;
                 }
