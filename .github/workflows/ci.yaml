@@ -72,7 +72,7 @@ jobs:
           path: .
 
       - name: Test with Gradle
-        run: app/gradlew -p app test
+        run: chmod a+x app/gradlew && app/gradlew test --tests "*"
 
       
 
