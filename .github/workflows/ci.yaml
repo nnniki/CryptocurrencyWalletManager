@@ -61,15 +61,16 @@ jobs:
 
   SAST:
     runs-on: ubuntu-latest
+    container: gradle:8.5.0-jdk17
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: chmod a+x app/gradlew && app/gradlew -p app build sonar --info
 
   BuildAppWithGradle:
     runs-on: ubuntu-latest
