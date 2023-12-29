@@ -63,7 +63,7 @@ jobs:
 
   UnitTests:
     runs-on: ubuntu-latest
-    container: 8.5.0-jdk17
+    container: gradle:8.5.0-jdk17
     needs: ["BuildAppWithGradle"]
     steps:       
       - name: Download artifact
