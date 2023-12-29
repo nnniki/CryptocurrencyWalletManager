@@ -38,6 +38,7 @@ jobs:
 
   BuildAppWithGradle:
     runs-on: ubuntu-latest
+    needs: ["CheckCodeFormat", "EditorConfigCheck"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -59,3 +60,36 @@ jobs:
         with:
           name: code
           path: .
+
+  UnitTests:
+    runs-on: ubuntu-latest
+    needs: ["BuildAppWithGradle"]
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: code
+          path: .
+
+      - name: Test with Gradle
+        run: gradle test -p app/src/test
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
