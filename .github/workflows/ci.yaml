@@ -36,6 +36,18 @@ jobs:
       - name: Start checking
         run: ec
 
+  MarkdownFilesCheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install mardownlint
+        run: npm install -g markdownlint-cli
+
+      - name: Run markdownlint test
+        run: markdownlint **/*.md
+
   BuildAppWithGradle:
     runs-on: ubuntu-latest
     needs: ["CheckCodeFormat", "EditorConfigCheck"]
