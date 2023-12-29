@@ -6,8 +6,7 @@ First off, thanks for taking the time to contribute! ❤️
 All types of contributions are encouraged and valued.
 See the [Table of Contents](#table-of-contents)
 for different ways to help and details about how this project handles them.
-Please make sure to read the relevant section 
-before making your contribution.
+Please make sure to read the relevant section before making your contribution.
 It will make it a lot easier for the maintainers
 and smooth out the experience for all involved.
 The community looks forward to your contributions. 🎉
@@ -79,13 +78,13 @@ potential bug as fast as possible.
 - Also make sure to search the internet (including Stack Overflow)
   to see if users outside of the GitHub community have discussed the issue.
 - Collect information about the bug:
-  * Stack trace (Traceback)
-  * OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
-  * Version of the interpreter, compiler, SDK, runtime environment,
-  package manager, depending on what seems relevant.
-  * Possibly your input and the output
-  * Can you reliably reproduce the issue?
-  * And can you also reproduce it with older versions?
+  - Stack trace (Traceback)
+  - OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
+  - Version of the interpreter, compiler, SDK, runtime environment,
+    package manager, depending on what seems relevant.
+  - Possibly your input and the output
+  - Can you reliably reproduce the issue?
+  - And can you also reproduce it with older versions?
 
 <!-- omit in toc -->
 #### How Do I Submit a Good Bug Report?
