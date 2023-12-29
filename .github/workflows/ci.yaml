@@ -72,7 +72,7 @@ jobs:
           path: .
 
       - name: Test with Gradle
-        run: gradle test -p app/src/test
+        run: gradle test -p app
 
       
 
