@@ -39,7 +39,8 @@ public class CryptoClient {
         builder.append(System.lineSeparator());
         builder.append("get_wallet_summary - See your amount of money and currently active investments");
         builder.append(System.lineSeparator());
-        builder.append("get_wallet_overall_summary - See all your Active and Finished investments and your currently profit/loss");
+        builder.append("get_wallet_overall_summary - See all your Active and Finished investments" +
+                    " and your currently profit/loss");
         builder.append(System.lineSeparator());
         builder.append("disconnect - Save your current activity and exit");
 
