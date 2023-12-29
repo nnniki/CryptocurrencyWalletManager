@@ -145,7 +145,7 @@ public class CryptoCurrencyWalletTest {
         when(infoSaver.checkCryptocurrenciesForUpdate(cryptoCurrencyWallet.getCryptocurrencies())).thenReturn(true);
         when(infoSaver.getCryptocurrenciesFromApi()).thenReturn(cryptocurrencies);
         StringBuilder builder = new StringBuilder();
-        builder.append("ID:ETH Name:Ethereum Price:10265.0  ");
+        builder.append("ID:ETH Name:Ethereum Price:10265.0 ");
         builder.append("ID:TIT Name:Titcoin Price:0.3284  ");
         builder.append("ID:BTC Name:Bitcoin Price:20253.0  ");
 
