@@ -28,6 +28,7 @@ sonar {
     property "sonar.projectKey", "nnniki_Modern-DevOps-Practices-Project"
     property "sonar.organization", "modern-devops-practices"
     property "sonar.host.url", "https://sonarcloud.io"
+    property "sonar.java.binaries", "app/build/classes"
   }
 }
 
