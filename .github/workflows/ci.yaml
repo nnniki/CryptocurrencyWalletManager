@@ -61,7 +61,7 @@ jobs:
 
   BuildAppWithGradle:
     runs-on: ubuntu-latest
-    needs: ["CheckCodeFormat", "EditorConfigCheck", "MarkdownFilesCheck", "HardcodedSecretsCheck", "SAST"]
+    needs: ["CheckCodeFormat", "EditorConfigCheck", "MarkdownFilesCheck", "HardcodedSecretsCheck"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
