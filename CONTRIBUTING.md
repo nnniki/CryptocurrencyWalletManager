@@ -30,10 +30,11 @@ Please report unacceptable behavior.
 ## I Have a Question
 
 > If you want to ask a question, we assume that you have read the available
-> [Documentation](https://github.com/nnniki/Modern-DevOps-Practices/edit/main/README.md).
+> [Documentation](https://github.com/nnniki/Modern-DevOps-Practices-Project/blob/feature/README.md).
 
 Before you ask a question, it is best to search for existing
-[Issues](/issues) that might help you.
+[Issues](https://github.com/nnniki/Modern-DevOps-Practices-Project/issues)
+that might help you.
 In case you have found a suitable issue and still need
 clarification, you can write your question in
 this issue. It is also advisable to search the internet for answers first.
@@ -41,7 +42,7 @@ this issue. It is also advisable to search the internet for answers first.
 If you then still feel the need to ask a question and need clarification,
 we recommend the following:
 
-- Open an [Issue](/issues/new).
+- Open an [Issue](https://github.com/nnniki/Modern-DevOps-Practices-Project/issues/new).
 - Provide as much context as you can about what you're running into.
 - Provide project and platform versions (jdk, gradle), as well
   as some configuration data that differs from the one in the project.
@@ -74,7 +75,7 @@ potential bug as fast as possible.
 - To see if other users have experienced (and potentially already solved)
   the same issue you are having, check if there is not already
   a bug report existing for your bug or error in the
-  [bug tracker](issues?q=label%3Abug).
+  [bug tracker](https://github.com/nnniki/Modern-DevOps-Practices-Project/issues?q=is%3Aopen+is%3Aissue)
 - Also make sure to search the internet (including Stack Overflow)
   to see if users outside of the GitHub community have discussed the issue.
 - Collect information about the bug:
@@ -98,9 +99,9 @@ to be sent encrypted as well. -->
 We use GitHub issues to track bugs and errors.
 If you run into an issue with the project:
 
-- Open an [Issue](/issues/new). (Since we can't be sure at this point
-  whether it is a bug or not, we ask you not to talk about a bug yet
-  and not to label the issue).
+- Open an [Issue](https://github.com/nnniki/Modern-DevOps-Practices-Project/issues/new).
+ (Since we can't be sure at this point whether it is a bug or not,
+  we ask you not to talk about a bug yet and not to label the issue).
 - Explain the behavior you would expect and the actual behavior.
 - Please provide as much context as possible and describe the
   *reproduction steps* that someone else can follow to recreate the
