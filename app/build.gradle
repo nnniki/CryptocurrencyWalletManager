@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "org.sonarqube" version "4.4.1.3373"
 }
 
 group 'org.example'
@@ -20,6 +21,14 @@ dependencies {
     implementation('org.objenesis:objenesis:3.2')
     implementation('net.bytebuddy:byte-buddy:1.14.5')
 
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "nnniki_Modern-DevOps-Practices-Project"
+    property "sonar.organization", "modern-devops-practices"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 
 test {
