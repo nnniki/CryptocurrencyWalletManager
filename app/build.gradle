@@ -10,10 +10,15 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    // configuration that holds jars to include in the jar
+    extraLibs
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
-    extraLibs group: 'com.google.code.gson', name: 'gson', version: '2.10'
+    extraLibs group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
     implementation('org.mockito:mockito-core:5.8.0')
     implementation('org.mockito:mockito-junit-jupiter:5.8.0')
     implementation('net.bytebuddy:byte-buddy:1.14.11')
