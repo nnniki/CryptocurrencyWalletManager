@@ -111,7 +111,7 @@ jobs:
           path: .
           
       - name: Run Snyk to check for vulnerabilities
-        working-directory: ${{github.workspace}}/app/src/main
+        working-directory: ${{github.workspace}}/app
         run: |
           npm install -g snyk
           snyk auth ${{secrets.SNYK_TOKEN}}
