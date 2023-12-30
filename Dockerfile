@@ -2,7 +2,8 @@
 FROM gradle:8.5.0-jdk17 as builder
 WORKDIR /app
 ADD --chown=gradle:gradle /app /app
-RUN app/gradlew build
+RUN chmod a+x ./gradlew
+RUN ./gradlew build
 
 # final stage
 FROM openjdk:17-ea-17-oracle
