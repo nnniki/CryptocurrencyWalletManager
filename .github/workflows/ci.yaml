@@ -111,11 +111,9 @@ jobs:
           path: .
           
       - name: Run Snyk to check for vulnerabilities
-        working-directory: ${{github.workspace}}/app
         run: |
-          npm install -g snyk
           snyk auth ${{secrets.SNYK_TOKEN}}
-          snyk test --all-projects
+          app/gradlew -p app snyk-test
         
   UnitTests:
     runs-on: ubuntu-latest
