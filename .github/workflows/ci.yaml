@@ -112,6 +112,7 @@ jobs:
           
       - name: Run Snyk to check for vulnerabilities
         run: |
+          npm install -g snyk
           snyk auth ${{secrets.SNYK_TOKEN}}
           app/gradlew -p app snyk-test
         
