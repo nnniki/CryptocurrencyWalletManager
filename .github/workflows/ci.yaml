@@ -100,7 +100,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
 
-  SnyckTest:
+  SnykTest:
     runs-on: ubuntu-latest
     needs: ["BuildAppWithGradle"]
     steps:
@@ -114,7 +114,9 @@ jobs:
         uses: snyk/actions/gradle-jdk17@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-  
+        with:
+          args: snyk test --all-projects
+        
   UnitTests:
     runs-on: ubuntu-latest
     container: gradle:8.5.0-jdk17
