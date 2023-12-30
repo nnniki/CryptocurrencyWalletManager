@@ -114,6 +114,7 @@ jobs:
         run: |
           npm install -g snyk
           snyk auth ${{secrets.SNYK_TOKEN}}
+          chmod a+x app/gradlew
           app/gradlew -p app snyk-test
         
   UnitTests:
