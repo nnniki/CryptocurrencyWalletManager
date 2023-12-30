@@ -111,11 +111,11 @@ jobs:
           path: .
           
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/gradle-jdk17@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: snyk test --all-projects
+        working-directory: ${{github.workspace}}/src
+        run: |
+          npm install -g snyk
+          snyk auth ${{secrets.SNYK_TOKEN}}
+          snyk test --all-projects
         
   UnitTests:
     runs-on: ubuntu-latest
