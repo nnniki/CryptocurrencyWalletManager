@@ -24,7 +24,6 @@ dependencies {
 }
 
 snyk {
-    severity = 'critical'
     arguments = '--all-projects'
     autoDownload = true
     autoUpdate = true
