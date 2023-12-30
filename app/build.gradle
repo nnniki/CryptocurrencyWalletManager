@@ -19,6 +19,7 @@ dependencies {
     implementation('net.bytebuddy:byte-buddy:1.14.11')
     implementation('net.bytebuddy:byte-buddy-agent:1.14.11')
     implementation('org.objenesis:objenesis:3.3')
+    implementation ('org.json:json:20231013')
 
 }
 
