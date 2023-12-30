@@ -2,7 +2,6 @@
 FROM gradle:8.5.0-jdk17 as builder
 WORKDIR /app
 ADD --chown=gradle:gradle /app /app
-RUN chmod a+x app/gradlew
 RUN app/gradlew build
 
 # final stage
