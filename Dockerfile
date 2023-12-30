@@ -9,4 +9,4 @@ RUN ./gradlew build
 FROM openjdk:17-ea-17-oracle
 RUN mkdir /app
 COPY --from=builder /app/build/libs/*.jar /app/CryptoCurrencyWalletManager.jar
-ENTRYPOINT ["java", "-cp", "/app/CryptoCurrencyWalletManager.jar", "CryptoServer", "java", "-cp", "/app/CryptoCurrencyWalletManager.jar", "CryptoClient"]
+ENTRYPOINT ["java", "-cp", "/app/CryptoCurrencyWalletManager.jar", "bg.sofia.uni.fmi.mjt.cryptowallet.CryptoServer"]
