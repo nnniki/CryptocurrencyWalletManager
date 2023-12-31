@@ -21,6 +21,17 @@ dependencies {
     implementation('org.objenesis:objenesis:3.3')
 }
 
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'bg.sofia.uni.fmi.mjt.cryptowallet.CryptoServer'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+ }
+
 snyk {
     arguments = '--all-projects'
     autoDownload = true
