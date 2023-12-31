@@ -7,6 +7,6 @@ RUN ./app/gradlew build
 
 # final stage
 FROM openjdk:17-ea-17-oracle
-RUN mkdir /home/gradle/src
+RUN mkdir -p /home/gradle/src
 COPY --from=builder /home/gradle/src/app/build/libs/*.jar /home/gradle/src/CryptoCurrencyWalletManager.jar
 ENTRYPOINT ["java", "-cp", "/home/gradle/src/CryptoCurrencyWalletManager.jar", "bg.sofia.uni.fmi.mjt.cryptowallet.CryptoServer"]
