@@ -42,11 +42,11 @@ public class CoinApiData {
         try {
             URI uri = new URI(API_ENDPOINT_SCHEME, API_ENDPOINT_HOST, API_ENDPOINT_PATH, null);
             Dotenv dotenv = Dotenv.load();
-            String Api_key = dotenv.get("API_KEY");
+            String apiKey = dotenv.get("API_KEY");
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(uri)
-                    .setHeader(API_HEADER_TEXT, Api_key)
+                    .setHeader(API_HEADER_TEXT, apiKey)
                     .build();
 
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
