@@ -1,7 +1,7 @@
 # build stage 
 FROM gradle:8.5.0-jdk17 as builder
 WORKDIR /app
-ADD --chown=gradle:gradle /* /app
+ADD --chown=gradle:gradle /app /app
 RUN chmod a+x ./gradlew
 RUN ./gradlew build
 
@@ -9,4 +9,4 @@ RUN ./gradlew build
 FROM openjdk:17-ea-17-oracle
 RUN mkdir /app
 COPY --from=builder /app/build/libs/*.jar /app/CryptoCurrencyWalletManager.jar
-ENTRYPOINT ["java", "-cp", "/app/CryptoCurrencyWalletManager.jar:gson-2.10.1.jar", "bg.sofia.uni.fmi.mjt.cryptowallet.CryptoServer"]
+ENTRYPOINT ["java", "-cp", "/app/CryptoCurrencyWalletManager.jar", "bg.sofia.uni.fmi.mjt.cryptowallet.CryptoServer"]
