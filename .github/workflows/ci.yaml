@@ -152,7 +152,7 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
-          severity: 'CRITICAL'
+          severity: 'CRITICAL, HIGH'
 
   BuildAndPushImage:
     runs-on: ubuntu-latest
@@ -180,20 +180,3 @@ jobs:
 
       - name: Push an image to DockerHub
         run: docker push nikolaykostandiev/modern_devops_practices_final_project:${{ github.sha }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
