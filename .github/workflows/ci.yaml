@@ -129,8 +129,8 @@ jobs:
           path: .
       - name: Export variables from secret
         run: |
-          ENV_JSON='${{ secrets.API_KEY }}'
-          echo "$ENV_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> $API_KEY
+          API_KEY='${{ secrets.API_KEY }}'
+          export API_KEY
       - name: Test with Gradle
         run: chmod a+x app/gradlew && app/gradlew -x build -p app test --tests "*"
 
