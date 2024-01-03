@@ -142,7 +142,7 @@ jobs:
           path: .
 
       - name: Build an image
-        run: docker build -t "cryptowallet:${{github.sha}}" .
+        run: docker build -t "cryptowallet:${{github.sha}}" ./ServerDockerfile
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
@@ -173,10 +173,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build an image
-        run: docker build -t "java_app:${{ github.sha }}" .
+        run: docker build -t "Server:${{ github.sha }}" ./ServerDockerfile
           
       - name: Tag an image
-        run: docker tag java_app:${{ github.sha }} nikolaykostandiev/modern_devops_practices_final_project:${{ github.sha }}
+        run: docker tag Server:${{ github.sha }} nikolaykostandiev/modern_devops_practices_final_project:${{ github.sha }}
 
       - name: Push an image to DockerHub
         run: docker push nikolaykostandiev/modern_devops_practices_final_project:${{ github.sha }}
