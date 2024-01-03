@@ -6,7 +6,7 @@ services:
     ports: 
       - 7777:7777
     environment:
-      - API_KEY="${{secrets.API_KEY}}"
+      - API_KEY: "${{secrets.API_KEY}}"
 
   Client:
     image: nikolaykostandiev/crypto_client:6ae47db4486e24d60df158796213ae5dc547b4da
