@@ -41,8 +41,8 @@ public class CoinApiData {
 
         try {
             URI uri = new URI(API_ENDPOINT_SCHEME, API_ENDPOINT_HOST, API_ENDPOINT_PATH, null);
-            Dotenv dotenv = Dotenv.load();
-            String apiKey = dotenv.get("API_KEY");
+      
+            String apiKey = System.getenv("API_KEY")
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(uri)
