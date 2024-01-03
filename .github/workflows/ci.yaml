@@ -76,6 +76,8 @@ jobs:
         uses: gradle/gradle-build-action@v2
       
       - name: Run build with Gradle Wrapper
+        env: 
+          API_KEY: "${{secrets.API_KEY}}"
         run: chmod a+x app/gradlew && app/gradlew -x test -p app build
 
       - name: Upload Artifact
@@ -147,6 +149,8 @@ jobs:
         run: docker build -t "cryptowallet:${{github.sha}}" -f ServerDockerfile .
 
       - name: Run Trivy vulnerability scanner
+        env: 
+          API_KEY: "${{secrets.API_KEY}}"
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'cryptowallet:${{ github.sha }}'
@@ -170,6 +174,8 @@ jobs:
         run: docker build -t "cryptowallet:${{github.sha}}" -f ClientDockerfile .
 
       - name: Run Trivy vulnerability scanner
+        env: 
+          API_KEY: "${{secrets.API_KEY}}"
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'cryptowallet:${{ github.sha }}'
