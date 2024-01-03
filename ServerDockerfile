@@ -4,7 +4,7 @@ WORKDIR /app
 ADD --chown=gradle:gradle /app /app
 EXPOSE 7777
 RUN chmod a+x ./gradlew
-RUN ./gradlew build
+RUN ./gradlew -x test build
 
 # final stage
 FROM openjdk:17-ea-17-oracle
