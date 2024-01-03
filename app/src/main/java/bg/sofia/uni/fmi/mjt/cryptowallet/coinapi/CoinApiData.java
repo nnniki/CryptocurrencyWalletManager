@@ -7,7 +7,6 @@ import bg.sofia.uni.fmi.mjt.cryptowallet.exception.TooManyRequestsException;
 import bg.sofia.uni.fmi.mjt.cryptowallet.exception.UnauthorizedException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import io.github.cdimascio.dotenv.Dotenv;
 
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
@@ -40,10 +39,8 @@ public class CoinApiData {
         HttpResponse<String> response;
 
         try {
-            URI uri = new URI(API_ENDPOINT_SCHEME, API_ENDPOINT_HOST, API_ENDPOINT_PATH, null);
-      
-            String apiKey = System.getenv("API_KEY")
-
+            URI uri = new URI(API_ENDPOINT_SCHEME, API_ENDPOINT_HOST, API_ENDPOINT_PATH, null); 
+            String apiKey = System.getenv("API_KEY");
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(uri)
                     .setHeader(API_HEADER_TEXT, apiKey)
