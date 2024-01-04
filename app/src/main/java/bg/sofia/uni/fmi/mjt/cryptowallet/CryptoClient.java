@@ -77,7 +77,7 @@ public class CryptoClient {
             Scanner scanner = new Scanner(System.in)) {
 
             String hostName = System.getenv("HOST_NAME");
-            String serverPort = System.getenv("SERVER_PORT");
+            int serverPort = System.getenv("SERVER_PORT");
             socketChannel.connect(new InetSocketAddress(hostName, serverPort));
 
             System.out.println("Connected to the server.");
