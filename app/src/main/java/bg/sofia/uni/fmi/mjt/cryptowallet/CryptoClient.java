@@ -76,9 +76,9 @@ public class CryptoClient {
             PrintWriter writer = new PrintWriter(Channels.newWriter(socketChannel, CS_NAME), true);
             Scanner scanner = new Scanner(System.in)) {
 
-            String HOST_NAME = System.getenv("HOST_NAME");
-            String SERVER_PORT = System.getenv("SERVER_PORT");
-            socketChannel.connect(new InetSocketAddress(HOST_NAME, SERVER_PORT));
+            String hostName = System.getenv("HOST_NAME");
+            String serverPort = System.getenv("SERVER_PORT");
+            socketChannel.connect(new InetSocketAddress(hostName, serverPort));
 
             System.out.println("Connected to the server.");
             System.out.println("You can enter help to see the instructions");
