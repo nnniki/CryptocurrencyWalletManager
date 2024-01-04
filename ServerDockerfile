@@ -1,8 +1,7 @@
 # build stage 
 FROM gradle:8.5.0-jdk17 as builder
 WORKDIR /app
-ADD --chown=gradle:gradle /app /app
-EXPOSE 7777
+COPY --chown=gradle:gradle /app /app
 RUN chmod a+x ./gradlew
 RUN ./gradlew -x test build
 
