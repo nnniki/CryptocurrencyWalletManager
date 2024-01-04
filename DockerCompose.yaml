@@ -2,14 +2,14 @@ version: "3"
 services:
 
   Server:
-    image: nikolaykostandiev/crypto_server:6ae47db4486e24d60df158796213ae5dc547b4da
+    image: nikolaykostandiev/crypto_server:${IMAGE_TAG}
     ports: 
       - 7777:7777
     environment:
       - API_KEY: "${{secrets.API_KEY}}"
 
   Client:
-    image: nikolaykostandiev/crypto_client:6ae47db4486e24d60df158796213ae5dc547b4da
+    image: nikolaykostandiev/crypto_client:${IMAGE_TAG}
     network_host: host
     depends_on:
       - Server
