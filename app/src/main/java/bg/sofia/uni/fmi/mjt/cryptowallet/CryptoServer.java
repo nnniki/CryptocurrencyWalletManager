@@ -21,7 +21,6 @@ public class CryptoServer {
 
     private static final int BUFFER_SIZE = 10000;
     private static final int SERVER_PORT = 7777;
-    private static final String HOST = "localhost";
     private static final String INVALID_REQUEST = "This request is invalid, please check help menu!";
     private static final String DISCONNECT = "User saved and disconnected successfully";
     private final CommandExecutor commandExecutor;
@@ -98,7 +97,7 @@ public class CryptoServer {
     }
 
     private void configureServerSocketChannel(ServerSocketChannel channel, Selector selector) throws IOException {
-        channel.bind(new InetSocketAddress(HOST, this.port));
+        channel.bind(new InetSocketAddress(this.port));
         channel.configureBlocking(false);
         channel.register(selector, SelectionKey.OP_ACCEPT);
     }
