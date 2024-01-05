@@ -3,13 +3,16 @@ services:
 
   Server:
     image: nikolaykostandiev/crypto_server:${IMAGE_TAG}
-    ports: 
-      - 7777:7777
+    container_name: Server
     environment:
-      - API_KEY: "${{secrets.API_KEY}}"
+      - API_KEY=${{secrets.API_KEY}}
 
   Client:
     image: nikolaykostandiev/crypto_client:${IMAGE_TAG}
-    network_host: host
+    container_name: Client
+    restart: on-failure
+    environment:
+      - SERVER_PORT=${PORT}
+      - HOST_NAME=Server
     depends_on:
       - Server
