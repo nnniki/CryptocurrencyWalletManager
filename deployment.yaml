@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: server-container
-        image: nikolaykostandiev/crypto_server:7342368984affb70b0834e7ba50d3224437e5739
+        image: nikolaykostandiev/crypto_server:${IMAGE_TAG}
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 7777
@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: client-container
-        image: nikolaykostandiev/crypto_client:d1f9a5d21592567ec637da3026de0e7224fbd98c 
+        image: nikolaykostandiev/crypto_client:${IMAGE_TAG}
         imagePullPolicy: IfNotPresent
         stdin: true
         tty: true
