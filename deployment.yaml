@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: server
+  name: server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server-container
+        image: nikolaykostandiev/crypto_server:7342368984affb70b0834e7ba50d3224437e5739
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 7777
+        env:
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: secrets
+              key: API_KEY
+        - name: LISTEN_PORT
+          value: "7777"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: client
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+      - name: client-container
+        image: nikolaykostandiev/crypto_client:d1f9a5d21592567ec637da3026de0e7224fbd98c 
+        imagePullPolicy: IfNotPresent
+        stdin: true
+        tty: true
+        env:
+        - name: SERVER_PORT
+          value: "7777"
+        - name: HOST_NAME
+          value: "crypto-server-service"
+
+
