@@ -330,13 +330,13 @@ public class CryptoCurrencyWallet implements CryptoCurrencyWalletAPI {
 
         try (Reader reader = new FileReader(cryptoFile)) {
             if (cryptoFile.length() == 0) {
-                infoSaver.getCryptocurrenciesFromApi();
+                cryptocurrencies = infoSaver.getCryptocurrenciesFromApi();
             }
             else {
                 cryptocurrencies = GSON.fromJson(reader, Cryptocurrencies.class);
             }
         } catch (IOException e) {
-            infoSaver.getCryptocurrenciesFromApi();
+            cryptocurrencies = infoSaver.getCryptocurrenciesFromApi();
             log.saveServerException(e);
         }
     }

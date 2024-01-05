@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 
 public class CoinApiData {
 
-    private static final String API_KEY = ""; // Enter your API key
     private static final String API_ENDPOINT_SCHEME = "https";
     private static final String API_ENDPOINT_HOST = "rest.coinapi.io";
     private static final String API_ENDPOINT_PATH = "/v1/assets";
@@ -40,11 +39,11 @@ public class CoinApiData {
         HttpResponse<String> response;
 
         try {
-            URI uri = new URI(API_ENDPOINT_SCHEME, API_ENDPOINT_HOST, API_ENDPOINT_PATH, null);
-
+            URI uri = new URI(API_ENDPOINT_SCHEME, API_ENDPOINT_HOST, API_ENDPOINT_PATH, null); 
+            String apiKey = System.getenv("API_KEY");
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(uri)
-                    .setHeader(API_HEADER_TEXT, API_KEY)
+                    .setHeader(API_HEADER_TEXT, apiKey)
                     .build();
 
             response = client.send(request, HttpResponse.BodyHandlers.ofString());

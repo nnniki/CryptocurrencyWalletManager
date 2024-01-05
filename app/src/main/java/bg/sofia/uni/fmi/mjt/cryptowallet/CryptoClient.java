@@ -13,8 +13,6 @@ import java.util.Scanner;
 
 public class CryptoClient {
 
-    private static final int SERVER_PORT = 7777;
-    private static final String HOST_NAME = "localhost";
     private static final String CS_NAME = "UTF-8";
     private static final String HELP = "help";
     private static final String INVALID_INPUT = "User's input is invalid, check the help menu";
@@ -78,7 +76,9 @@ public class CryptoClient {
             PrintWriter writer = new PrintWriter(Channels.newWriter(socketChannel, CS_NAME), true);
             Scanner scanner = new Scanner(System.in)) {
 
-            socketChannel.connect(new InetSocketAddress(HOST_NAME, SERVER_PORT));
+            String hostName = System.getenv("HOST_NAME");
+            int serverPort = Integer.parseInt(System.getenv("SERVER_PORT"));
+            socketChannel.connect(new InetSocketAddress(hostName, serverPort));
 
             System.out.println("Connected to the server.");
             System.out.println("You can enter help to see the instructions");
