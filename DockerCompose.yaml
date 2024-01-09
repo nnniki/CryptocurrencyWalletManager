@@ -6,6 +6,7 @@ services:
     container_name: Server
     environment:
       - API_KEY=${{secrets.API_KEY}}
+      - LISTEN_PORT=${PORT}
 
   Client:
     image: nikolaykostandiev/crypto_client:${IMAGE_TAG}

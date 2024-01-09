@@ -20,7 +20,6 @@ import java.util.Iterator;
 public class CryptoServer {
 
     private static final int BUFFER_SIZE = 10000;
-    private static final int SERVER_PORT = 7777;
     private static final String INVALID_REQUEST = "This request is invalid, please check help menu!";
     private static final String DISCONNECT = "User saved and disconnected successfully";
     private final CommandExecutor commandExecutor;
@@ -144,7 +143,8 @@ public class CryptoServer {
         CryptoCurrencyWallet wallet = new CryptoCurrencyWallet(saver);
         Log log = new Log();
         CommandExecutor executor = new CommandExecutor(wallet, log);
-        CryptoServer server = new CryptoServer(SERVER_PORT, executor);
+        int listenPort = Integer.parseInt(System.getenv("LISTEN_PORT"));
+        CryptoServer server = new CryptoServer(listenPort, executor);
         server.start();
     }
 }
