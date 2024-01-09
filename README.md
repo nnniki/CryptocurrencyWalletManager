@@ -67,32 +67,32 @@ undergo code review to maintain code quality.
 
 ![Workflow](https://github.com/nnniki/Modern-DevOps-Practices-Project/assets/94651604/75875952-b4e9-4ffb-8ddd-e5c06d615b05)
 
-### CheckCodeFormat Job :
+### CheckCodeFormat Job
 
 - Checks out code.
 - Uses checkstyle action.
 - Checks if the code meets our custom code style [requirments](https://github.com/nnniki/Modern-DevOps-Practices-Project/blob/feature/app/checkstyle.xml)
 
-### EditorConfigCheck Job :
+### EditorConfigCheck Job
 
 - Checks out code.
 - Installs editorconfig-checker.
 - Checks if the project files meets the defined [rules](https://github.com/nnniki/Modern-DevOps-Practices-Project/blob/feature/.editorconfig)
 
-### MarkdownFilesCheck Job :
+### MarkdownFilesCheck Job
 
 - Checks out code.
 - Installs markdown-lint.
 - Checks all .md files if following certain rules.
 
-### HardcodedSecretsCheck Job :
+### HardcodedSecretsCheck Job
 
 - Checks out code.
 - Uses gitleaks action.
 - Checks code for security vulnerabilities, such as
   hardcoded API keys, passwords and other sensitive information.
 
-### BuildAppWithGradle Job :
+### BuildAppWithGradle Job
 
 - Depends on the CheckCodeFormat, EditorConfigCheck,
   MarkdownFilesCheck, HardcodedSecretsCheck jobs.
@@ -101,42 +101,42 @@ undergo code review to maintain code quality.
 - Build the application.
 - Upload the built application as an artifact.
 
-### SAST Job :
+### SAST Job
 
 - Depends on BuildAppWithGradle job.
 - Download the artifact, uploaded in previous job.
 - Uses sonarcloud action to scan the code for
   potential problems and vulnerabilities.
 
-### SnykTest Job :
+### SnykTest Job
 
 - Depends on BuildAppWithGradle job.
 - Download the artifact.
 - Install Snyk.
 - Checks project's dependencies for vulnerabilities.
 
-### UnitTests Job :
+### UnitTests Job
 
 - Depends on BuildAppWithGradle job.
 - Uses container with pre-installed JDK17
   and Gradle.
 - Runs the unit tests.
 
-### TrivyScanServerImage Job :
+### TrivyScanServerImage Job
 
 - Depends on SAST, SnykTest, UnitTests jobs.
 - Download the artifact.
 - Build the docker image from ServerDockerfile.
 - Scan the server image for vulnerabilities.
 
-### TrivyScanClientImage Job :
+### TrivyScanClientImage Job
 
 - Depends on SAST, SnykTest, UnitTests jobs.
 - Download the artifact.
 - Build the docker image from ServerClientfile.
 - Scan the client image for vulnerabilities.
 
-###  BuildAndPushImages Job :
+###  BuildAndPushImages Job
 
 - Depends on TrivyScanServerImage, TrivyScanClientImage jobs.
 - Download the artifact.
@@ -164,7 +164,7 @@ undergo code review to maintain code quality.
 - Run client container from the built image.
 - Set needed environment variables for the client.
 
-#### Commands used :
+#### Docker commands
 
 `docker compose -f DockerCompose.yaml up -d Server` -
 Starts Server container in detached mode.
@@ -190,7 +190,7 @@ Manifests are available [here](https://github.com/nnniki/Modern-DevOps-Practices
 ### Secret
 
 - Create a secret for the API key.
-- API key mustn't be in plain text for security reasons. 
+- API key mustn't be in plain text for security reasons.
 
 ### Service
 
@@ -200,7 +200,7 @@ Manifests are available [here](https://github.com/nnniki/Modern-DevOps-Practices
   redirects them to the server containers.
 - Service acts like loadbalancer.
   
-#### Commands used :
+#### Kubernets commands
 
 `minikube start` - Starts a kubernets cluster.
 
