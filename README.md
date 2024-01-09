@@ -136,7 +136,7 @@ undergo code review to maintain code quality.
 - Build the docker image from ServerClientfile.
 - Scan the client image for vulnerabilities.
 
-###  BuildAndPushImages Job
+### BuildAndPushImages Job
 
 - Depends on TrivyScanServerImage, TrivyScanClientImage jobs.
 - Download the artifact.
