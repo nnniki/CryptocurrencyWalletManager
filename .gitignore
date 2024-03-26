@@ -1,0 +1,13 @@
+# Compiled class file
+build/
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# IntelliJ files
+.idea/
+*.iml
